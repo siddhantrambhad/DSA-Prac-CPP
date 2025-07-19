@@ -1,0 +1,27 @@
+class Solution {
+  public:
+    void dfs(int node, vector<vector<int>> adj,int vis[],vector<int> &list)
+    {
+        vis[node] = 1;
+        list.push_back(node);
+        // to find the neighbours of the vertex
+        
+        for(auto it: adj[node])
+        {
+            if(!vis[it])
+            {
+                dfs(it,adj,vis,list);
+            }
+        }
+    }
+    vector<int> dfs(vector<vector<int>>& adj) {
+      int V = adj.size();
+      vector<int> list;
+      int vis[V] = {0};
+      int start = 0;
+      dfs(start,adj,vis,list);
+      return list;
+      
+        
+    }
+};
