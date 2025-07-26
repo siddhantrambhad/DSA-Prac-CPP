@@ -1,0 +1,17 @@
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;  // Add last digit
+        num /= 10;        // Remove last digit
+    }
+    return sum;
+}
+int prod(int n)
+{ if(n==0)return 0;
+  int prod = 1;
+  while(n>0)
+{ prod *=n%10;
+  n /=10;
+}
+return prod;
+}
