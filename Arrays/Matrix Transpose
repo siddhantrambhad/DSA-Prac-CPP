@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<vector<int>> transpose(vector<vector<int>>& matrix) {
+        int row = matrix.size();
+        int col = matrix[0].size();
+        vector<vector<int>> t = matrix;    // we do not aklter the data instead we create a copy of it
+        vector<vector<int>> trans(col,vector<int> (row));  // define a matrix with rows as the initial colums and the col and the initial rows vector and then just manipulate. 
+            for(int i = 0;i<matrix[0].size();i++)
+        {
+            for(int j = 0;j<matrix.size();j++)
+            {
+                trans[i][j] = matrix[j][i];
+            }
+        }
+        return trans;
+        
+        
+    }
+};
