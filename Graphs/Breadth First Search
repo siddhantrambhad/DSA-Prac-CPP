@@ -25,4 +25,33 @@ class Solution {
         }
         return bfs;
     }
-};
+}; // The most basic bfs syntax is here downside
+void bfs(vector<vector<int>>& grid, int startRow, int startCol) {
+    int rows = grid.size();
+    int cols = grid[0].size();
+    
+    // Directions: up, down, left, right
+    vector<vector<int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    
+    queue<pair<int, int>> q;
+    q.push({startRow, startCol});
+    
+    // Mark the starting cell as visited (customize as needed)
+    grid[startRow][startCol] = -1;  // or some visited flag
+    
+    while (!q.empty()) {
+        auto [r, c] = q.front(); q.pop();
+        
+        for (auto& dir : directions) {
+            int nr = r + dir[0];
+            int nc = c + dir[1];
+            
+            // Check bounds and whether the neighbor is visitable
+            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] == YOUR_CONDITION) {
+                q.push({nr, nc});
+                grid[nr][nc] = -1;  // Mark visited
+            }
+        }
+    }
+}
+// Most important
