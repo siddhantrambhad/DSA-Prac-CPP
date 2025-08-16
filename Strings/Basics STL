@@ -1,0 +1,5 @@
+// to convert a number to a string use
+string a  = to_string(num)
+
+and to back convert the string to number use
+int res = stoi(a)
