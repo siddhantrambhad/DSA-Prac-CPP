@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+        // we need to return the number of repeating + non repeating unique characters in the chars array?
+        int n = chars.size();
+    
+        string compressed = "";
+        for(int i = 0;i<n;i++)
+        {   int cnt = 1;
+            while(i+1 < n && chars[i] == chars[i+1])
+            {
+                cnt++;
+                i++;
+            }
+            compressed += chars[i];
+            if(cnt>1)
+            {
+                 compressed += to_string(cnt);
+            }
+           
+        }
+        for(int i = 0;i<compressed.size();i++)
+        {
+            chars[i] = compressed[i];
+        }
+        return compressed.size();
+       
+    }
+};
