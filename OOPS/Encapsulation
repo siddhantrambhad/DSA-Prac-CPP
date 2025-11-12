@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+private:
+    string Name;
+    string Company;
+    int age;
+
+public:
+    void setName(string name)
+    {
+        Name = name;
+    }
+    string getName()
+    {
+        return Name;
+    }
+    void setCompany(string company)
+    {
+        Company = company;
+    }
+    string getCompany()
+    {
+        return Company;
+    }
+    void setAge(int Age)
+    {
+        if (Age >= 18)
+        {
+            age = Age;
+        }
+    }
+    int getAge()
+    {
+        return age;
+    }
+    void introduce()
+    {
+        cout << "Name -" << Name << endl;
+        cout << "Company -" << Company << endl;
+        cout << "Age -" << age << endl;
+    }
+    Employee(string name, string company, int age)
+    {
+        this->Name = name;
+        this->Company = company;
+        this->age = age;
+    }
+};
+int main()
+{
+    Employee e1 = Employee("SIddhant", "Company", 21);
+
+    e1.setAge(5);
+    cout << e1.getName() << " is " << e1.getAge() << "Years Old !!" << endl;
+    return 0;
+}
